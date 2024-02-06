@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #baby{
+            width: 150px;
+            height: 150px;
+        }
+
+
+        .field {
+            margin: 10px;
+            box-sizing: border-box;
+
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            margin: 0 30% 0 30%;
+        }
+
+        .field#buttons {
+            display: flex;
+        }
+
+
+
+    </style>
+
+
+
+
+
+    <form action="" method="post">
+        <img id="baby" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2twaWxnM293bTQyMGkxbnZzazN0MTFjZW43eGYxZ3o0NGZvNWE5aiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/61jCIlahGab2E/giphy.gif" alt="">
+        <h1>zup</h1>
+
+        {% csrf_token %}
+
+        <input class="field" type="text" name="name" placeholder="name">
+        <input class="field" type="text" name="email" placeholder="email">
+        <input class="field" type="text" name="phonenum" placeholder="phonenum">
+        <input class="field" type="number" name="year" placeholder="year" min="2009" max="2024" value="2009">
+        <!--joined in-->
+
+        <input class="field" id="avlblField" type="text" name="avlbl" style="display: none;" value="yes"><!--availble-->
+
+        <div class="field" id="buttons">
+            <script>
+                //ps: ma ksrtch rassi
+                function toggle() {
+                    document.getElementById("avlblField").value = (document.getElementById("avlblField").value == "yes" ? "no" : "yes")
+                }
+            </script>
+
+            <p>avlbl</p>
+            <button type="button" onclick="toggle()">yes</button>
+            <button type="button" onclick="toggle()">no</button>
+            <p>(this thing works)</p>
+        </div>
+
+
+
+
+        <button type="submit">submit</button>
+    </form>
+</body>
+
+</html>
