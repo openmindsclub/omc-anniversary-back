@@ -14,24 +14,24 @@ dbname = client["admin"]
 collection = dbname["user"]
 
 
-def addUser(
-    name,
-    email,
-    phonenum,
-    year,
-    avlbl,
-):
-    #we need to run some checks to see if the user doesn't exist
-    #run the validators
+class User:
+    def __init__(self, name, email, phonenum, year, avlbl):
+        self.name = name
+        self.email = email
+        self.phonenum = phonenum
+        self.year = year
+        self.avlbl = avlbl
 
+    def create(self):
+        # we need to run some checks to see if the user doesn't exist
+        # run the validators
 
-    user = {
-        "name": name,
-        "email": email,
-        "phonenum": phonenum,
-        "year": year,
-        "avlbl": avlbl,
-    }
+        user = {
+            "name": self.name,
+            "email": self.email,
+            "phonenum": self.phonenum,
+            "year": self.year,
+            "avlbl": self.avlbl,
+        }
 
-    collection.insert_one(user)
-
+        collection.insert_one(user)
