@@ -1,5 +1,10 @@
 import pymongo
 
+from ..CustomValidators import validate_name, validate_phonenum
+from django.core.exceptions import ValidationError
+from django.core.validators import validate_email
+
+
 """
 we need to store our auth info in venv
 """
@@ -24,7 +29,29 @@ class User:
 
     def create(self):
         # we need to run some checks to see if the user doesn't exist
+        """
+        THIS WAS NOT TESTED YET
+        """
+        toCheck = {
+            "name": self.name,
+            "email": self.email,
+            "phonenum": self.phonenum,
+        }
+        for i in toCheck:
+            if collection.find_one({i: toCheck[i]}):
+                return False
+
         # run the validators
+        toValidate = [self.name, self.email, self.phonenum]
+        validators = [validate_name, validate_email, validate_phonenum]
+
+        for i in range(toValidate.__len__()):
+            try:
+                validate_email(validators[i](toValidate[i]))
+            except ValidationError as e:
+                #print(e)
+                return False
+
 
         user = {
             "name": self.name,
@@ -35,3 +62,5 @@ class User:
         }
 
         collection.insert_one(user)
+
+        return True
