@@ -1,3 +1,8 @@
+"""
+DON'T CODE LIKE NPCs
+USE STATIKER INSTEAD
+"""
+
 html = "/home/zak/Desktop/myDesk/djangoProjects/omc-anniversary-back/userApp/templates/userApp/index.html"
 
 lines = []
@@ -13,7 +18,7 @@ for i in lines:
 
     if current.__contains__("src="):
         # src="{% static 'userApp/' %}"
-        
+
         # src="{% static 'userApp/
         # ' %}"
         pass
