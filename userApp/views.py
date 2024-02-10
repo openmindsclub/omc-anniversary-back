@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from db.dbClasses.User import User
-
+from .models.models import addUser
 # Create your views here.
 
 
@@ -24,9 +23,10 @@ def userView(request):
             email = keys["email"]
             phonenum = keys["phonenum"]
             year = keys["year"]
-            avlbl = keys["avlbl"]
+            #avlbl = keys["avlbl"]
 
-            err = not User(name, email, phonenum, year, avlbl).create()
+            #err = not User(name, email, phonenum, year, avlbl).create()
+            err = not addUser(name, email, phonenum, year)
             
 
     return render(request, "userApp/form.html", {})
