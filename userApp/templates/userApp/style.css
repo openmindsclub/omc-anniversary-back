@@ -541,6 +541,8 @@ img.pin1 {
   background-color: #15141d;
   border-bottom: 0.1vw solid gray;
   font-size: 1.8vw;
+
+  appearance: textfield;
 }
 
 /* input[type="text"] {
