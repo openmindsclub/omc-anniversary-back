@@ -8,6 +8,9 @@ class User(models.Model):
     year = models.CharField(max_length=4)
 
 
+    def __str__(self):
+        return self.name
+
 from .CustomValidators import validate_name, validate_phonenum, validate_year
 from django.core.exceptions import ValidationError
 from django.core.validators import validate_email

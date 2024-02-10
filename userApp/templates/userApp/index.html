@@ -169,7 +169,8 @@
     <h1 id="typed2" class="font" style="margin-top: 3vw"></h1>
 
     <div class="container2">
-      <form id="myform">
+      <form id="myform" method="POST">
+      {% csrf_token %}
         <div class="form-top">
           <img src="{% static 'userApp/assets/Buttons.svg' %}" alt="buttons SVG" />
           <p>omc-form</p>
@@ -194,7 +195,7 @@
             </div>
             <div class="right-div">
               <span class="full_name">(Full Name)</span>
-              <input class="input" type="text" />
+              <input class="input" type="text" name="name"/>
               <div class="Blink"></div>
             </div>
           </div>
@@ -207,7 +208,7 @@
             </div>
             <div class="right-div">
               <span class="full_name">(E-mail)</span>
-              <input class="input1" type="text" />
+              <input class="input1" type="text" name="email"/>
               <div class="Blink1"></div>
             </div>
           </div>
@@ -220,7 +221,7 @@
             </div>
             <div class="right-div">
               <span class="full_name">(Phone Number)</span>
-              <input class="input2" type="text" />
+              <input class="input2" type="text" name="phonenum"/>
               <div class="Blink2"></div>
             </div>
           </div>
@@ -233,7 +234,7 @@
             </div>
             <div class="right-div">
               <span class="full_name">(Year You Joined OMC)</span>
-              <input class="input3" type="text" />
+              <input class="input3" type="number" name="year"/>
               <div class="Blink3"></div>
             </div>
           </div>
@@ -253,7 +254,7 @@
 
           <!-- <div class="question">Are You Sure About Your Info ?</div> -->
           <div class="but">
-            <button onclick="showDiv()" id="yes-button" type="button">
+            <button onclick="submitForm(); showDiv();" id="yes-button" type="button">
               REGISTER
             </button>
             <!-- <button
@@ -278,6 +279,7 @@
 
   <script src="{% static 'userApp/scripts/countdown.js' %}"></script>
   <script src="{% static 'userApp/scripts/inputs.js' %}"></script>
+  <script src="{% static 'userApp/scripts/form.js' %}"></script>
   <script src="{% static 'userApp/scripts/success.js' %}"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
