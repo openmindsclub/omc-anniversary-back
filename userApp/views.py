@@ -29,4 +29,4 @@ def userView(request):
             err = not addUser(name, email, phonenum, year)
             
 
-    return render(request, "userApp/form.html", {})
+    return render(request, "userApp/index.html", {})
