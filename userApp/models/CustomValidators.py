@@ -46,3 +46,14 @@ def validate_name(val):
     error = ValidationError("invalid name")
     if val.__len__()<3:
         raise error
+
+def validate_year(val):
+    error = ValidationError("invalid year")
+    try:
+        int(val)
+    except:
+        raise error
+    
+
+    if not int(val) in range(2009, 2025):
+        raise error
