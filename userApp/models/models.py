@@ -36,7 +36,8 @@ def addUser(name, email, phonenum, year):
     for i in checks:
         if i.__len__():
             return False
-
+        
+        
 
     #final we can add
     user = User(name=name, email=email, phonenum=phonenum, year=year)
