@@ -123,7 +123,7 @@ STATIC_ROOT = join(BASE_DIR, "staticfiles")
 STATIC_URL = "static/"
 
 STATICFILES_DIRS = (
-    join(BASE_DIR, "userApp", "templates"),
+    #join(BASE_DIR, "userApp", "templates"),
 )
 
 # Default primary key field type
