@@ -2,16 +2,20 @@
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
-#from orjson import dumps
+from orjson import loads
 from .models.models import addUser
 
 
 @csrf_exempt
 def userView(request):
+    #print(request.body)
+    #print(request.POST)
+
     rslt = {"status":False, "name":"", "email":"", "phonenum":"", "year":""}
 
-    if request.method == "POST":
+    if request.method in ["POST"   ]: #"OPTIONS"
         rqst = request.POST
+        #rqst = loads(rqst)
         keys = {"name": "", "email": "", "phonenum": "", "year": ""}
         err = False
 
