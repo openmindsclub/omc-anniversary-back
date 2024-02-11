@@ -15,10 +15,10 @@ def userView(request):
         keys = {"name": "", "email": "", "phonenum": "", "year": ""}
         err = False
 
-        for i in rqst:
+        for i in keys:
             if not i in rqst:
                 # incomplete form
-                rslt[i] = "empty field"
+                rslt[i] = "required field"
                 err = True
                 break
 
