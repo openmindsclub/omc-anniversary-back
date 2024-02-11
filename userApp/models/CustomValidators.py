@@ -2,6 +2,7 @@ from django.core.exceptions import ValidationError
 
 
 def validate_phonenum(val):
+    """
     error = ValidationError("invalid phone number")
     # 07 92 39 79 06 len 10
     # +213 92 39 79 06 len 12
@@ -41,6 +42,9 @@ def validate_phonenum(val):
 
             if not current in countryCodes:
                 raise error
+    """
+    pass
+
 
 def validate_name(val):
     error = ValidationError("invalid name")
