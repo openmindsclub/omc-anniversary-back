@@ -1,7 +1,9 @@
 # omc-anniversary-back
 
 
+<h1>PRODUCTION READY API</h1>
+
 <ul>
-    <li>intergration with sqlite3</li>
-    <li>frontend merging (ki tkml front team)</li>
+    <li>reset superuser pwd + csrf keygen(can be ignored)</li>
+    <li>disabled templates</li>
 </ul>
